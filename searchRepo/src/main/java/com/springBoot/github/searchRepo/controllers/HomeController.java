@@ -5,9 +5,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.springBoot.github.searchRepo.models.Repos;
@@ -27,8 +26,8 @@ public class HomeController {
 		return "Hello";
 	}
 	
-	@PostMapping("/getByLanguage")
-	public List<Repos> getReposByLanguage(@RequestAttribute String language) throws IOException, InterruptedException{
+	@GetMapping("/getByLanguage")
+	public List<Repos> getReposByLanguage(@RequestParam String language) throws IOException, InterruptedException{
 		return repoService.getReposByLanguage(language);
 	}
 	
