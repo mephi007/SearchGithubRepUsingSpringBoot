@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,8 +20,9 @@ public class HomeController {
 	}
 	
 	@PostMapping("/getByLanguage")
-	public List<Repos> getRepoByLanguage(@RequestBody String language){
-		
+	public List<Repos> getReposByLanguage(@RequestAttribute String language){
+		return repoService.getReposByLanguage(language);
 	}
+	
 	
 }
