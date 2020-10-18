@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +19,7 @@ public class RepoService {
 	
 	List<Repos> repos = new ArrayList();
 
-	public List<Repos> getReposByLanguage(String language) throws IOException, InterruptedException {
+	public List<Repos> getReposByLanguage(String language) throws IOException, InterruptedException, JSONException {
 		// TODO Auto-generated method stub
 		repos = daoLayer.getReposByLanguage(language);
 		return repos;

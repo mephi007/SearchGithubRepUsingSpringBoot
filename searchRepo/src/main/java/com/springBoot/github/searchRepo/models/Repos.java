@@ -15,6 +15,11 @@ public class Repos {
 		this.user = user;
 	}
 
+	public Repos() {
+		// TODO Auto-generated constructor stub
+	}
+
+
 	public String getId() {
 		return id;
 	}
